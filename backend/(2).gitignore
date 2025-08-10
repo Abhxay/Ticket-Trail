@@ -1,0 +1,19 @@
+# Maven / Gradle
+target/
+.gradle/
+build/
+
+# IDE
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Env
+*.env
+application.properties
+application.yml
+``>
+⚠ Store DB passwords, API keys in `application.properties` or `.env` **locally only**. Don’t commit them — create sample config files like `application-sample.properties`.
+

@@ -16,9 +16,17 @@ const Dashboard = () => {
       <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-6">
         {/* Header */}
         <div className="flex flex-wrap justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">
-            Welcome{user?.username ? `, ${user.username}` : ''}!
-          </h1>
+          <div className="flex items-center gap-3">
+            {/* ✅ Logo from public folder */}
+            <img
+              src={`${process.env.PUBLIC_URL}/favicon.ico`}
+              alt="App Logo"
+              className="h-10 w-10"
+            />
+            <h1 className="text-2xl font-bold">
+              Welcome{user?.username ? `, ${user.username}` : ''}!
+            </h1>
+          </div>
 
           <div className="flex flex-wrap gap-2">
             {isSuperAdmin && (

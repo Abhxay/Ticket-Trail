@@ -20,6 +20,17 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-blue-100 via-purple-100 to-pink-100">
       <div className="bg-white shadow-xl rounded-lg p-8 w-full max-w-md">
+        
+      <div className="flex justify-center mb-4">
+  <img
+    src={`${process.env.PUBLIC_URL}/favicon.ico`}
+    alt="App Logo"
+    className="h-40 w-auto drop-shadow-lg"
+  />
+</div>
+
+
+
         {/* Heading */}
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Welcome Back 👋
