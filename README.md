@@ -1,139 +1,112 @@
+# 🎟 TicketTrail – Full-Stack Ticket & Request Management System
 
-                                              🎟 TicketTrail – Full-Stack Ticket & Request Management System
+**Focus:** Backend Architecture, Security, and Role-Based Access Control  
+**Tech Stack:** Spring Boot (Backend) | React + TailwindCSS (Frontend) | JWT Authentication
 
+---
 
+## 📌 Overview
 
+**TicketTrail** is a full-stack ticket/request management system designed to demonstrate secure, scalable backend engineering and role-based access control.
 
-Focus: Backend Architecture, Security, and Role-Based Access Control
-Tech Stack: Spring Boot (Backend) | React + TailwindCSS (Frontend) | JWT Authentication
+- **Backend (Spring Boot):** JWT authentication, role-based authorization, robust request management  
+- **Frontend (React + TailwindCSS):** Clean, responsive UI to interact with backend APIs
 
-📌 Overview
-TicketTrail is a full-stack ticket/request management system designed to demonstrate secure, scalable backend engineering and role-based access control.
+---
 
-The backend (Spring Boot) features JWT authentication, role-based authorization, and robust request management.
-The frontend (React + TailwindCSS) provides a clean, responsive UI to interact with the backend APIs.
+## 🚀 Key Backend Features
 
-🚀 Key Backend Features
-1. User Roles & Permissions
+### **User Roles & Permissions**
+- **ROLE_USER** – Submit and track personal requests  
+- **ROLE_ADMIN** – Manage requests & view statistics  
+- **ROLE_SUPER_ADMIN** – Full system control (users, roles, requests, settings)
 
-ROLE_USER – Submit and track personal requests
+### **Authentication & Security**
+- JWT-based stateless authentication  
+- Password hashing with Spring Security’s `PasswordEncoder`  
 
-ROLE_ADMIN – Manage requests & view statistics
+**Pre-configured Demo Accounts:**
 
-ROLE_SUPER_ADMIN – Full system control (users, roles, requests, settings)
+| Role         | Username    | Password   |
+|--------------|-------------|-----------|
+| Super Admin  | Superadmin  | superadmin |
+| Admin        | Admin_1     | admin123   |
+| User         | user        | user123    |
 
-Authentication & Security:
+---
 
-JWT-based stateless authentication
+### **Request Management**
+- CRUD operations for requests  
+- Role-based restrictions for approvals and updates  
+- Request statuses: **Raised**, **Done**  
+- Filtering by role and ownership  
 
-Password hashing with Spring Security’s PasswordEncoder
+---
 
-Pre-configured demo accounts:
+### **Statistics & Reporting**
+- Aggregated metrics: total, completed, and raised requests  
+- 7-day trend data for request volume  
+- Role-secured endpoints for admin-only analytics  
 
+---
 
-| Role         | Username     | Password   |
-|--------------|--------------|------------|
-| Super Admin  | Superadmin   | superadmin |
-| Admin        | Admin_1      | admin123   |
-| User         | user         | user123    |
+### **Security Highlights**
+- URL-level Spring Security rules  
+- Method-level restrictions with `@PreAuthorize`  
+- Clear separation between authentication, authorization, and business logic  
 
+---
 
-2. Request Management
+## 🌐 API Highlights
 
-CRUD operations for requests
+| Method | Endpoint                               | Description                           | Access           |
+|--------|----------------------------------------|---------------------------------------|------------------|
+| POST   | `/auth/login`                          | Authenticate & get JWT                | All              |
+| POST   | `/auth/register`                       | Create new user (ROLE_USER default)   | All              |
+| GET    | `/requests`                            | View requests (filtered by role)      | Authenticated    |
+| PUT    | `/requests/{id}/done`                  | Mark request as done                   | Admin/Superadmin |
+| GET    | `/admin/users`                         | List all users                         | Superadmin       |
+| POST   | `/admin/manage/{id}/add-admin`         | Promote user to Admin                  | Superadmin       |
+| GET    | `/admin/statistics`                    | Get request analytics                  | Admin/Superadmin |
 
-Role-based restrictions for approvals and updates
+---
 
-Request statuses: Raised, Done
+## 🎨 Frontend Overview
+- Role-aware routing with `PrivateRoute`  
+- Modern responsive UI via **TailwindCSS**  
+- **Axios** automatically attaches JWT to API calls  
 
-Filtering by role and ownership
+**Pages include:**
+- Login / Register  
+- Dashboard (submit & track requests)  
+- Account settings  
+- Admin management panel  
+- Admin statistics (charts)  
 
+---
 
-3. Statistics & Reporting
+## 🛠 Setup Instructions
 
-Aggregated metrics for total, completed, and raised requests
-
-7-day trend data for request volume
-
-Role-secured endpoints for admin-only analytics
-
-
-4. Security Highlights
-
-URL-level Spring Security rules
-
-Method-level restrictions with @PreAuthorize
-
-Clear separation between authentication, authorization, and business logic
-
-
-🌐 API Highlights
-
-
-Method	Endpoint	Description	Access
-
-POST	/auth/login	Authenticate & get JWT	All
-
-POST	/auth/register	Create new user (ROLE_USER default)	All
-
-GET	/requests	View requests (filtered by role)	Authenticated
-
-PUT	/requests/{id}/done	Mark request as done	Admin/Superadmin
-
-GET	/admin/users	List all users	Superadmin
-
-POST	/admin/manage/{id}/add-admin	Promote user to Admin	Superadmin
-
-GET	/admin/statistics	Get request analytics	Admin/Superadmin
-
-
-🎨 Frontend Overview
-
-Role-aware routing with PrivateRoute
-
-Modern responsive UI via TailwindCSS
-
-Axios automatically attaches JWT to API calls
-
-Pages include:
-
-Login / Register
-
-Dashboard (submit & track requests)
-
-Account settings
-
-Admin management panel
-
-Admin statistics (charts)
-
-
-
-🛠 Setup Instructions
-
-Backend
-
-# Prerequisites: Java 11+, Maven
+### Backend
+**Prerequisites:** Java 11+, Maven  
+```bash
 mvn spring-boot:run
-
 Configure application.properties with your database credentials
 
-Default roles and demo users auto-seeded on startup
-
+Default roles and demo users are auto-seeded on startup
 
 Frontend
+Prerequisites: Node.js, npm
 
-# Prerequisites: Node.js, npm
-
+bash
+Copy
+Edit
 npm install
-
 npm start
-
 Runs at: http://localhost:3000
 
-
-
 🔍 Why This Project
+
 Real-world security patterns with JWT & Spring Security
 
 Demonstrates REST API best practices
@@ -144,9 +117,7 @@ Maintainable, extensible backend design
 
 Data aggregation for analytics
 
-
 📈 Future Enhancements
-
 
 Advanced analytics & filtering options
 
@@ -156,9 +127,6 @@ Automated backend test suite
 
 Horizontal scaling support
 
-
 📬 Contact
-
 GitHub: Abhxay
-
 LinkedIn: Abhay Thakur
