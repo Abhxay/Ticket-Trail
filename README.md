@@ -15,6 +15,7 @@ The frontend (React + TailwindCSS) provides a clean, responsive UI to interact w
 
 🚀 Key Backend Features
 1. User Roles & Permissions
+
 ROLE_USER – Submit and track personal requests
 
 ROLE_ADMIN – Manage requests & view statistics
