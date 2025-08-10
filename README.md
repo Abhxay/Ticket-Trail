@@ -89,6 +89,7 @@
 
 ### Backend
 **Prerequisites:** Java 11+, Maven  
+
 ```bash
 mvn spring-boot:run
 Configure application.properties with your database credentials
@@ -98,13 +99,13 @@ Default roles and demo users are auto-seeded on startup
 Frontend
 Prerequisites: Node.js, npm
 
+
 npm install
 npm start
 Runs at: http://localhost:3000
+```
 
----
-
-### **🔍 Why This Project**
+🔍 Why This Project
 
 Real-world security patterns with JWT & Spring Security
 
@@ -128,4 +129,4 @@ Horizontal scaling support
 
 📬 Contact
 GitHub: Abhxay
-LinkedIn: Abhay Thakur
+LinkedIn:https://www.linkedin.com/in/abhay-thakur23/
