@@ -127,6 +127,8 @@ Automated backend test suite
 
 Horizontal scaling support
 
-📬 Contact
-GitHub: Abhxay
-LinkedIn:https://www.linkedin.com/in/abhay-thakur23/
+
+## 📬 Contact  
+**GitHub:** [Abhxay](https://github.com/Abhxay)  
+**LinkedIn:** [Abhay Thakur](https://www.linkedin.com/in/abhay-thakur23/)  
+
