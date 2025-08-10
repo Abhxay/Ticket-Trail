@@ -30,12 +30,16 @@ Password hashing with Spring Security’s PasswordEncoder
 
 Pre-configured demo accounts:
 
-Role	Username	Password
-Super Admin	Superadmin	superadmin
-Admin	Admin_1	admin123
-User	user	user123
+
+| Role         | Username     | Password   |
+|--------------|--------------|------------|
+| Super Admin  | Superadmin   | superadmin |
+| Admin        | Admin_1      | admin123   |
+| User         | user         | user123    |
+
 
 2. Request Management
+
 CRUD operations for requests
 
 Role-based restrictions for approvals and updates
@@ -44,31 +48,47 @@ Request statuses: Raised, Done
 
 Filtering by role and ownership
 
+
 3. Statistics & Reporting
+
 Aggregated metrics for total, completed, and raised requests
 
 7-day trend data for request volume
 
 Role-secured endpoints for admin-only analytics
 
+
 4. Security Highlights
+
 URL-level Spring Security rules
 
 Method-level restrictions with @PreAuthorize
 
 Clear separation between authentication, authorization, and business logic
 
+
 🌐 API Highlights
+
+
 Method	Endpoint	Description	Access
+
 POST	/auth/login	Authenticate & get JWT	All
+
 POST	/auth/register	Create new user (ROLE_USER default)	All
+
 GET	/requests	View requests (filtered by role)	Authenticated
+
 PUT	/requests/{id}/done	Mark request as done	Admin/Superadmin
+
 GET	/admin/users	List all users	Superadmin
+
 POST	/admin/manage/{id}/add-admin	Promote user to Admin	Superadmin
+
 GET	/admin/statistics	Get request analytics	Admin/Superadmin
 
+
 🎨 Frontend Overview
+
 Role-aware routing with PrivateRoute
 
 Modern responsive UI via TailwindCSS
@@ -87,27 +107,33 @@ Admin management panel
 
 Admin statistics (charts)
 
+
+
 🛠 Setup Instructions
+
 Backend
-bash
-Copy
-Edit
+
 # Prerequisites: Java 11+, Maven
 mvn spring-boot:run
+
 Configure application.properties with your database credentials
 
 Default roles and demo users auto-seeded on startup
 
+
 Frontend
-bash
-Copy
-Edit
+
 # Prerequisites: Node.js, npm
+
 npm install
+
 npm start
+
 Runs at: http://localhost:3000
 
-🔍 Why This Project Stands Out
+
+
+🔍 Why This Project
 Real-world security patterns with JWT & Spring Security
 
 Demonstrates REST API best practices
@@ -118,7 +144,10 @@ Maintainable, extensible backend design
 
 Data aggregation for analytics
 
+
 📈 Future Enhancements
+
+
 Advanced analytics & filtering options
 
 Event-driven notifications for request updates
@@ -127,6 +156,9 @@ Automated backend test suite
 
 Horizontal scaling support
 
+
 📬 Contact
+
 GitHub: Abhxay
+
 LinkedIn: Abhay Thakur
